@@ -1,0 +1,55 @@
+{
+  "name": "two-languages",
+  "private": true,
+  "description": "Gatsby/React Web App",
+  "version": "1.0.0",
+  "author": "Evan Szymkowicz",
+  "dependencies": {
+    "gatsby": "^2.15.23",
+    "gatsby-image": "^2.2.21",
+    "gatsby-link": "^2.2.15",
+    "gatsby-plugin-i18n": "^1.0.1",
+    "gatsby-plugin-manifest": "^2.2.18",
+    "gatsby-plugin-offline": "^3.0.9",
+    "gatsby-plugin-react-helmet": "^3.1.8",
+    "gatsby-plugin-sharp": "^2.2.25",
+    "gatsby-source-contentful": "^2.1.42",
+    "gatsby-source-filesystem": "^2.1.26",
+    "gatsby-transformer-remark": "^2.6.24",
+    "gatsby-transformer-sharp": "^2.2.17",
+    "intl": "^1.2.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
+    "splash": "^0.3.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.1.0",
+    "eslint": "^6.4.0",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "prettier": "^1.18.2"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gatsbyjs/gatsby-starter-default.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby-starter-default#readme",
+  "main": "gatsby-browser.js"
+}
