@@ -5,14 +5,19 @@
   "version": "1.0.0",
   "author": "Evan Szymkowicz",
   "dependencies": {
+    "@emotion/core": "^10.0.17",
+    "@mdx-js/react": "^1.5.0",
+    "font-awesome": "^4.7.0",
     "gatsby": "^2.15.23",
     "gatsby-image": "^2.2.21",
     "gatsby-link": "^2.2.15",
+    "gatsby-paginate": "^1.1.1",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.18",
     "gatsby-plugin-offline": "^3.0.9",
     "gatsby-plugin-react-helmet": "^3.1.8",
     "gatsby-plugin-sharp": "^2.2.25",
+    "gatsby-plugin-theme-ui": "^0.2.43",
     "gatsby-source-contentful": "^2.1.42",
     "gatsby-source-filesystem": "^2.1.26",
     "gatsby-transformer-remark": "^2.6.24",
@@ -22,7 +27,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
-    "splash": "^0.3.0"
+    "slash": "^3.0.0"
   },
   "devDependencies": {
     "dotenv": "^8.1.0",

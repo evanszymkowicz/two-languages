@@ -4,13 +4,14 @@ const createPaginatedPages = require("gatsby-paginate")
 exports.createPages = ({ graphql, boundActionCreators }) => {
 
 	const { createPage } = boundActionCreators
-	return new Promise((resolve, reject) => {
+	return new Promise (( resolve, reject ) => {
+
 		const pageTemplate = path.resolve("src/templates/page.js")
-		const blogPostTemplate = path.resolve("src/templates/blog-post.js")
+		const articlePostTemplate = path.resolve("src/templates/article-post.js")
 
 		graphql(`
       {
-        allContentfulPage {
+        allContentfulPost {
           edges {
             node {
               id
@@ -25,7 +26,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 				if (result.errors) {
 					reject(result.errors)
 				}
-				result.data.allContentfulPage.edges.forEach(edge => {
+				result.data.allContentfulPost.edges.forEach(edge => {
 					createPage({
 						path: `/${edge.node.node_locale}/${edge.node.slug}/`,
 						component: pageTemplate,
@@ -41,7 +42,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 			.then(() => {
 				graphql(`
           {
-            allContentfulBlog {
+            allContentfulPost {
               edges {
                 node {
                   id
@@ -73,30 +74,29 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 						reject(result.errors)
 					}
 
-					createPaginatedPages({
-						edges: result.data.allContentfulBlog.edges,
-						createPage,
-						pageTemplate: "src/templates/blog-index.js",
+					createPaginatedPages ({
+						edges: result.data.allContentfularticle.edges, createPage,
+						pageTemplate: "src/templates/article-index.js",
 						pageLength: 20,
-						pathPrefix: "sk/blog",
+						pathPrefix: "esp/article",
 						buildPath: (index, pathPrefix) =>
 							index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}`,
 					})
 
 					createPaginatedPages({
-						edges: result.data.allContentfulBlog.edges,
+						edges: result.data.allContentfularticle.edges,
 						createPage,
-						pageTemplate: "src/templates/blog-index.js",
+						pageTemplate: "src/templates/article-index.js",
 						pageLength: 20,
-						pathPrefix: "en/blog",
+						pathPrefix: "en/article",
 						buildPath: (index, pathPrefix) =>
 							index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}`,
 					})
 
-					result.data.allContentfulBlog.edges.forEach(edge => {
+					result.data.allContentfularticle.edges.forEach(edge => {
 						createPage({
-							path: `/${edge.node.node_locale}/blog/${edge.node.slug}/`,
-							component: blogPostTemplate,
+							path: `/${edge.node.node_locale}/article/${edge.node.slug}/`,
+							component: articlePostTemplate,
 							context: {
 								slug: edge.node.slug,
 								title: edge.node.title,

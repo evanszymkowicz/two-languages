@@ -8,8 +8,8 @@ import ContactForm from "../components/ContactForm"
 import ArticlePostList from "../components/ArticlePostList"
 import Footer from "../components/Footer"
 
-// import "font-awesome/css/font-awesome.min.css"
-// import "../styles/main.css"
+import "font-awesome/css/font-awesome.min.css"
+import "../styles/main.css"
 
 const IndexPage = ({ data, pathContext }) => {
 	const homepage = data.allContentfulHomepage.edges[0].node
